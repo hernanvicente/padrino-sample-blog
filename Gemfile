@@ -20,7 +20,7 @@ gem 'dotenv'
 gem 'pg'
 gem 'sass'
 gem 'slim'
-gem 'thin'
+gem 'puma'
 
 # Test requirements
 group :test do
