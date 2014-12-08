@@ -1,0 +1,41 @@
+doctype 5
+html class="no-js" lang="en"
+  head
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    title Padrino/Foundation Sample Blog
+    script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+    = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+    = stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/css/foundation.min.css'
+    = stylesheet_link_tag 'application'
+  body
+    nav.top-bar data-topbar="" role="navigation"
+      ul.title-area
+        li.name
+          h1
+            a href="/" Padrino/Foundation Sample Blog
+        /! Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+        li.toggle-topbar.menu-icon
+          a href="#"
+            span Menu
+      section.top-bar-section
+        /! Right Nav Section
+        ul.right
+          li
+            = link_to "about", :about
+          li
+            = link_to "rss", '#'
+        /! Left Nav Section
+        ul.left
+          li
+            = link_to "blog", url(:posts, :index), class:'active'
+    .row
+      .large-12.columns
+        = yield
+    .row
+      .large-12.columns
+        Copyright &copy; 2014 Padrino
+    script src="/javascripts/jquery-ujs.js"
+    = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/js/foundation.min.js'
+    = javascript_include_tag 'application'

@@ -1,0 +1,7 @@
+section
+  h2
+    = link_to post.title, url_for(:posts, :show, :id => post)
+  span
+    = time_ago_in_words(post.created_at) + ' ago'
+  p
+    = simple_format post.body

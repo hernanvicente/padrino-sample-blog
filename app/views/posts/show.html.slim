@@ -1,0 +1,9 @@
+- @title = @post.title
+
+#post.row
+  .small-12.columns.entry
+    h3= @post.title
+    span= time_ago_in_words(@post.created_at || Time.now) + ' ago'
+    p= simple_format(@post.body)
+
+p= link_to "view all post", url_for(:posts, :index)
